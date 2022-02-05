@@ -769,13 +769,25 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+
+// $databases['default']['default'] = array (
+//   'database' => 'local_devopschina',
+//   'username' => 'ddoc',
+//   'password' => 'ddoc123',
+//   'prefix' => '',
+//   'host' => '127.0.0.1',
+//   'port' => '33067',
+//   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+//   'driver' => 'mysql',
+// );
+
 $databases['default']['default'] = array (
-  'database' => 'local_devopschina',
-  'username' => 'ddoc',
-  'password' => 'ddoc123',
+  'database' => $_ENV['DBASE'],
+  'username' => $_ENV['USER'],
+  'password' => $_ENV['PASS'],
   'prefix' => '',
-  'host' => '127.0.0.1',
-  'port' => '33067',
+  'host' => $_ENV['HOST'],
+  'port' => $_ENV['DPORT'],
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
